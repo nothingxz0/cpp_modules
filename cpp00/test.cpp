@@ -22,6 +22,7 @@ class Test {
             return (hell);
         }
 };
+
 int main (){
     Test hel;
     std::cout << hel.hell_yeah(20);

@@ -2,9 +2,16 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdlib>
 
 
-PhoneBook::PhoneBook() : nextContact(0), contactCount(0) {}
+PhoneBook::PhoneBook() : nextContact(0), contactCount(0) {
+    placeholders[0] = "firstName";
+    placeholders[1] = "lastName";
+    placeholders[2] = "nickName";
+    placeholders[3] = "phoneNumber";
+    placeholders[4] = "darkestSecret";
+}
 
 void  PhoneBook::addContact() {
     std::string line;
@@ -43,7 +50,6 @@ void  PhoneBook::addContact() {
 
 void    PhoneBook::displayAllContacts() {
     std::string field;
-    
     std::cout << std::setw(10) << std::right << "Index" << "|";
     std::cout << std::setw(10) << std::right << "First Name" << "|";
     std::cout << std::setw(10) << std::right << "Last Name" << "|";
@@ -63,10 +69,10 @@ void    PhoneBook::displayAllContacts() {
 }
 
 void    PhoneBook::displayContact(int Index) {
+
     for (int i = 0; i < 5; i++) {
-        std::cout << placeholders[i] << " " << Contacts[Index].GetInfo(i) << " ";
+        std::cout << placeholders[i] << ": " << Contacts[Index].GetInfo(i) << "." << std::endl;
     }
-    std::cout << std::endl;
 }
 
 void    PhoneBook::searchContact() {
@@ -82,6 +88,7 @@ void    PhoneBook::searchContact() {
     std::cout << "Enter index: ";
     if (!std::getline(std::cin, line)) {
         std::cout << "\nEOF detected." << std::endl;
+        std::cin.clear();
         return;
     }
     

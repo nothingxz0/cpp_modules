@@ -5,7 +5,7 @@
 
 class PhoneBook {
 private:
-    std::string placeholders[5] = {"firstName", "lastName", "nickName", "phoneNumber", "darkestSecret"};
+    std::string placeholders[5];
     Contact Contacts[8];
     int     nextContact;
     int     contactCount;
