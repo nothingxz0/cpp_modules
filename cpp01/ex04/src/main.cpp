@@ -22,7 +22,9 @@ int main(int ac, char **av) {
     while (std::getline(inFile, line)) {
        pos = 0;
        while ((pos = line.find(s1, pos)) != std::string::npos) {
-            line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
+            std::string before = line.substr(0, pos);
+            std::string after = line.substr(pos + s1.length());
+            line = before + s2 + after;
             pos += s2.length();
        }
         outFile << line << std::endl;
