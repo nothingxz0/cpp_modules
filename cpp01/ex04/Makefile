@@ -1,4 +1,4 @@
-NAME = Violence
+NAME = replace
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
@@ -7,7 +7,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 # Source files
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.cpp=.o)

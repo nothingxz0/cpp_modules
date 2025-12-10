@@ -1,7 +1,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-Weapon::Weapon() {}
+Weapon::Weapon(std::string type): type(type){}
 Weapon::~Weapon() {
     std::cout << "weapon destroyed" << std::endl;
 }
