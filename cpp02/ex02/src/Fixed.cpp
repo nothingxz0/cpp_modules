@@ -109,7 +109,7 @@ Fixed    Fixed::operator*(const Fixed& other) const{
 
 Fixed    Fixed::operator/(const Fixed& other) const{
     Fixed result;
-    result.setRawBits(this->getRawBits() / (other.getRawBits() << fractionalBits));
+    result.setRawBits((this->getRawBits() << fractionalBits) / other.getRawBits());
     return (result);
 }
 
@@ -121,6 +121,17 @@ Fixed& Fixed::operator++(){
 Fixed Fixed::operator++(int){
     Fixed old(*this);
     fixedPointValue++;
+    return (old);
+}
+
+Fixed& Fixed::operator--(){
+    fixedPointValue--;
+    return (*this);
+}
+
+Fixed Fixed::operator--(int){
+    Fixed old(*this);
+    fixedPointValue--;
     return (old);
 }
 
