@@ -7,7 +7,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 # Source files
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.cpp=.o)
