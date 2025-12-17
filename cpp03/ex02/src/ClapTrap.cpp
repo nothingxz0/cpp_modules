@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(std::string name): Name(name) {
+ClapTrap::ClapTrap(std::string name): Name(name), hitPoints(10), energyPoints(10), attackPoints(0) {
     std::cout << "ClapTrap instance Constructed with name: " << Name << std::endl;
 }
 
@@ -22,7 +22,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
