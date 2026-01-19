@@ -1,3 +1,6 @@
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include <string>
 
 class Animal {
@@ -7,6 +10,9 @@ class Animal {
         Animal();
         Animal(const Animal& other);
         Animal& operator=(const Animal& other);
-        ~Animal();
-        void    makeSound();
+        virtual ~Animal();
+        virtual void    makeSound() const;
+        std::string getType() const;
 };
+
+#endif

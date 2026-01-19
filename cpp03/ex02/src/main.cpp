@@ -1,11 +1,9 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-
 int main()
 {
     FragTrap frag("Frag");
     ScavTrap scav("Scav");
-
     frag.attack("soufiane");
     frag.takeDamage(20);
     frag.beRepaired(10);

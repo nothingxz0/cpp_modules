@@ -3,6 +3,14 @@
 
 #include <string>
 
+typedef struct playerPosition
+{
+    int x;
+    int y;
+    int z;
+} playerPosition;
+
+
 class ClapTrap {
     protected:
         std::string Name;

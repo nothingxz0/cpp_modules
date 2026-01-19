@@ -20,4 +20,9 @@ Cat& Cat::operator=(const Cat& other) {
 }
 
 Cat::~Cat() {
+    std::cout << "Cat Destructor Called." << std::endl;
+}
+
+void Cat::makeSound() const {
+    std::cout << "Meeeeeeeeow!" << std::endl;
 }

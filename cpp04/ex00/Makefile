@@ -1,4 +1,4 @@
-NAME = Trap
+NAME = Animal
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
@@ -7,7 +7,12 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 # Source files
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp \
+	  Animal.cpp \
+	  Dog.cpp \
+	  Cat.cpp \
+	  WrongAnimal.cpp \
+	  WrongCat.cpp
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.cpp=.o)
