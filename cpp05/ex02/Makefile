@@ -1,4 +1,4 @@
-NAME = Forms
+NAME = AForm
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
@@ -7,7 +7,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 # Source files
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.cpp=.o)
