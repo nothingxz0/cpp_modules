@@ -2,11 +2,12 @@
 #define BUREAUCRAT_HPP
 
 #include <string>
-#include <stdexcept>
+#include <exception>
+#include <iostream>
 
 class Bureaucrat {
     private:
-        std::string name;
+        const std::string name;
         int grade;
     public:
         Bureaucrat();
@@ -26,6 +27,7 @@ class Bureaucrat {
                     return "Grade too low, out of bounds!";
                 }
         };
+
         const std::string& getName() const;
         int getGrade() const;
         void incrementGrade();

@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 Bureaucrat::Bureaucrat(): name("Default"), grade(150) {
     std::cout << "Default Bureaucrat constructor called" << std::endl;
@@ -22,7 +21,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other): name(other.name), grade(other.g
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     if (this != &other) {
         this->grade = other.grade;
-        this->name = other.name;
     }
     return (*this);
 }
