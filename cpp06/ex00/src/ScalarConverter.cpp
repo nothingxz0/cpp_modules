@@ -124,20 +124,25 @@ static void printFloat(double value) {
     }
 
     float f = static_cast<float>(value);
+    std::streamsize prec = std::cout.precision();
 
     std::cout << "float: ";
     if (f == std::floor(f))
         std::cout << std::fixed << std::setprecision(1);
     std::cout << f << "f" << std::endl;
     std::cout.unsetf(std::ios::floatfield);
+    std::cout.precision(prec);
 }
 
 static void printDouble(double value) {
+    std::streamsize prec = std::cout.precision();
+
     std::cout << "double: ";
     if (value == std::floor(value))
         std::cout << std::fixed << std::setprecision(1);
     std::cout << value << std::endl;
     std::cout.unsetf(std::ios::floatfield);
+    std::cout.precision(prec);
 }
 
 ScalarConverter::ScalarConverter() {}
