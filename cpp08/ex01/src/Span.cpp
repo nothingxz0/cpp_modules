@@ -1,5 +1,6 @@
 #include "Span.hpp"
 
+
 Span::Span(): maxsize(0) {}
 
 Span::Span(unsigned int n): maxsize(n) {}
@@ -36,13 +37,12 @@ int Span::shortestSpan()
 {
     if (v.size() < 2)
         throw std::runtime_error("not enough elements");
+
     std::vector<int> sorted(v);
     std::sort(sorted.begin(), sorted.end());
-    int minDiff = sorted[1] - sorted[0];
-    for (size_t i = 2; i < sorted.size(); ++i) {
-        int diff = sorted[i] - sorted[i - 1];
-        if (diff < minDiff)
-            minDiff = diff;
-    }
-    return minDiff;
+
+    std::vector<int> diffs(sorted.size());
+    std::adjacent_difference(sorted.begin(), sorted.end(), diffs.begin());
+
+    return *std::min_element(diffs.begin() + 1, diffs.end());
 }
