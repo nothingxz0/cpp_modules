@@ -48,9 +48,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
 BitcoinExchange::~BitcoinExchange() {}
 
 bool BitcoinExchange::isValidDateFormat(const std::string& date) const {
-    if (date.size() != 10)
-        return false;
-    if (date[4] != '-' || date[7] != '-')
+    if (date.size() != 10 || date[4] != '-' || date[7] != '-')
         return false;
     for (size_t i = 0; i < date.size(); i++) {
         if (i == 4 || i == 7)
@@ -112,7 +110,7 @@ void BitcoinExchange::processInputFile(const std::string& inputFile) const {
     }
 
     std::string line;
-    std::getline(file, line); // skip header "date | value"
+    std::getline(file, line);
 
     while (std::getline(file, line)) {
         if (line.empty())
